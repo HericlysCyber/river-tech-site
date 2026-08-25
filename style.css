@@ -606,6 +606,50 @@ footer {
    RESPONSIVIDADE - CELULAR
 ========================= */
 
+/* =========================
+   WHATSAPP FLUTUANTE
+========================= */
+
+.whatsapp-flutuante {
+
+    position: fixed;
+
+    bottom: 25px;
+
+    right: 25px;
+
+    width: 60px;
+
+    height: 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background-color: #25d366;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 30px;
+
+    border-radius: 50%;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+
+    transition: 0.3s;
+
+    z-index: 1000;
+
+}
+.whatsapp-flutuante:hover {
+
+    transform: scale(1.1);
+
+}
 @media (max-width: 768px) {
 
 
@@ -792,5 +836,18 @@ footer {
         width: 100%;
 
     }
+    .whatsapp-flutuante {
+
+    width: 55px;
+
+    height: 55px;
+
+    bottom: 20px;
+
+    right: 20px;
+
+    font-size: 26px;
+
+}
 
 }

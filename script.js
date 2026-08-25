@@ -1,111 +1,34 @@
-const formulario = document.getElementById("formularioOrcamento");
+/* =========================
+   MENU MOBILE
+========================= */
 
-const campoTelefone = document.getElementById("telefone");
+const botaoMenu =
+    document.getElementById("botaoMenu");
 
-
-
-campoTelefone.addEventListener("input", function() {
-
-    let numero = campoTelefone.value;
-
-    numero = numero.replace(/\D/g, "");
-
-    numero = numero.substring(0, 11);
+const linksMenu =
+    document.getElementById("linksMenu");
 
 
-    if (numero.length > 10) {
+botaoMenu.addEventListener("click", function() {
 
-        campoTelefone.value =
+    linksMenu.classList.toggle("ativo");
 
-            "(" + numero.substring(0, 2) + ") " +
+    botaoMenu.classList.toggle("ativo");
 
-            numero.substring(2, 7) + "-" +
+    const menuAberto =
+        linksMenu.classList.contains("ativo");
 
-            numero.substring(7, 11);
-
-    }
-
-    else if (numero.length > 6) {
-
-        campoTelefone.value =
-
-            "(" + numero.substring(0, 2) + ") " +
-
-            numero.substring(2, 6) + "-" +
-
-            numero.substring(6);
-
-    }
-
-    else if (numero.length > 2) {
-
-        campoTelefone.value =
-
-            "(" + numero.substring(0, 2) + ") " +
-
-            numero.substring(2);
-
-    }
-
-    else {
-
-        campoTelefone.value = numero;
-
-    }
+    botaoMenu.setAttribute(
+        "aria-expanded",
+        menuAberto
+    );
 
 });
 
 
-
-formulario.addEventListener("submit", function(event) {
-
-    event.preventDefault();
-
-
-    const nome = document.getElementById("nome").value;
-
-    const telefone = document.getElementById("telefone").value;
-
-    const servico = document.getElementById("servico").value;
-
-    const problema = document.getElementById("problema").value;
-
-
-    const mensagem =
-
-        `Olá! Meu nome é ${nome}.
-
-Telefone: ${telefone}
-
-Serviço desejado: ${servico}
-
-Descrição do problema: ${problema}`;
-
-
-    const mensagemCodificada =
-
-        encodeURIComponent(mensagem);
-
-
-    const numeroWhatsApp = "5582981833162";
-
-
-    const linkWhatsApp =
-
-        "https://wa.me/" +
-
-        numeroWhatsApp +
-
-        "?text=" +
-
-        mensagemCodificada;
-
-
-    window.open(linkWhatsApp, "_blank");
-
-});
-
-
+/* =========================
+   IR PARA ORÇAMENTO
+========================= */
 
 function irParaOrcamento() {
 
@@ -118,61 +41,10 @@ function irParaOrcamento() {
 }
 
 
+/* =========================
+   SELECIONAR SERVIÇO
+========================= */
 
-const botaoMenu = document.getElementById("botaoMenu");
-
-const linksMenu = document.getElementById("linksMenu");
-
-
-botaoMenu.addEventListener("click", function() {
-
-    linksMenu.classList.toggle("ativo");
-    
-botaoMenu.classList.toggle("ativo");
-
-    const menuAberto = linksMenu.classList.contains("ativo");
-
-
-    botaoMenu.setAttribute(
-
-        "aria-expanded",
-
-        menuAberto
-
-    );
-
-});
-const elementosAnimados =
-    document.querySelectorAll(".animar");
-
-
-const observador = new IntersectionObserver(
-    function(elementos) {
-
-        elementos.forEach(function(elemento) {
-
-            if (elemento.isIntersecting) {
-
-                elemento.target.classList.add(
-                    "aparecer"
-                );
-
-            }
-
-        });
-
-    },
-    {
-        threshold: 0.2
-    }
-);
-
-
-elementosAnimados.forEach(function(elemento) {
-
-    observador.observe(elemento);
-
-});
 function selecionarServico(servicoEscolhido) {
 
     const campoServico =
@@ -200,3 +72,113 @@ function selecionarServico(servicoEscolhido) {
     }, 700);
 
 }
+
+
+/* =========================
+   ANIMAÇÃO DOS CARDS
+========================= */
+
+const elementosAnimados =
+    document.querySelectorAll(".animar");
+
+
+const observador =
+    new IntersectionObserver(
+
+        function(elementos) {
+
+            elementos.forEach(function(elemento) {
+
+                if (elemento.isIntersecting) {
+
+                    elemento.target.classList.add(
+                        "aparecer"
+                    );
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: 0.2
+        }
+
+    );
+
+
+elementosAnimados.forEach(function(elemento) {
+
+    observador.observe(elemento);
+
+});
+
+
+/* =========================
+   FORMULÁRIO → WHATSAPP
+========================= */
+
+const formulario =
+    document.getElementById("formularioOrcamento");
+
+
+formulario.addEventListener(
+    "submit",
+
+    function(event) {
+
+        event.preventDefault();
+
+
+        const nome =
+            document.getElementById("nome").value;
+
+        const telefone =
+            document.getElementById("telefone").value;
+
+        const servico =
+            document.getElementById("servico").value;
+
+        const problema =
+            document.getElementById("problema").value;
+
+
+        /* COLOQUE SEU NÚMERO AQUI */
+
+        const numeroWhatsApp =
+            "5582981833162";
+
+
+        const mensagem =
+`📩 *NOVA SOLICITAÇÃO - RIVER TECH*
+
+👤 *Nome:* ${nome}
+
+📱 *Telefone:* ${telefone}
+
+🔧 *Serviço:* ${servico}
+
+📝 *Descrição:*
+${problema}`;
+
+
+        const linkWhatsApp =
+
+            "https://wa.me/" +
+
+            numeroWhatsApp +
+
+            "?text=" +
+
+            encodeURIComponent(mensagem);
+
+
+        window.open(
+            linkWhatsApp,
+            "_blank"
+        );
+
+    }
+
+);
