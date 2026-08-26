@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -455,4 +456,463 @@
 </a>
 </body>
 
+=======
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>River Tech</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         CABEÇALHO
+    ========================== -->
+
+    <header>
+
+        <h1>RIVER TECH</h1>
+
+        <p>Manutenção e Tecnologia</p>
+
+    </header>
+
+
+    <!-- =========================
+         MENU
+    ========================== -->
+
+    <nav>
+
+        <button
+            id="botaoMenu"
+            class="botao-menu"
+            aria-label="Abrir ou fechar menu"
+            aria-expanded="false"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+        <div
+            id="linksMenu"
+            class="links-menu"
+        >
+
+            <a href="#inicio">
+                Início
+            </a>
+
+            <a href="#servicos">
+                Serviços
+            </a>
+
+            <a href="#contato">
+                Contato
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         CONTEÚDO PRINCIPAL
+    ========================== -->
+
+    <main>
+
+
+        <!-- =========================
+             SEÇÃO INICIAL
+        ========================== -->
+
+        <section
+            id="inicio"
+            class="hero"
+        >
+
+            <div class="hero-conteudo">
+
+
+                <!-- TEXTO -->
+
+                <div class="hero-texto-area">
+
+                    <p class="destaque">
+
+                        TECNOLOGIA E SOLUÇÕES
+
+                    </p>
+
+
+                    <h2>
+
+                        Seu equipamento em boas mãos
+
+                    </h2>
+
+
+                    <p class="hero-texto">
+
+                        Soluções em manutenção,
+                        computadores, notebooks,
+                        impressoras e tecnologia.
+
+                    </p>
+
+
+                    <button
+                        onclick="irParaOrcamento()"
+                    >
+
+                        Solicitar Orçamento
+
+                    </button>
+
+                </div>
+
+
+                <!-- IMAGEM -->
+
+                <div class="hero-imagem">
+
+                    <img
+                        src="imagens/computador.jpg"
+                        alt="Computador em manutenção"
+                    >
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SERVIÇOS
+        ========================== -->
+
+        <section id="servicos">
+
+            <h2>Nossos Serviços</h2>
+
+
+            <div class="servicos">
+
+
+                <!-- COMPUTADORES -->
+
+                <div class="card animar atraso-1">
+
+    <h3>
+        💻 Computadores
+    </h3>
+
+    <p>
+        Soluções completas para seu computador.
+    </p>
+
+
+    <ul class="lista-servicos">
+
+        <li>Formatação</li>
+
+        <li>Limpeza interna</li>
+
+        <li>Instalação de SSD</li>
+
+        <li>Backup de arquivos</li>
+
+    </ul>
+
+
+    <button onclick="selecionarServico('Manutenção de Computador')">
+
+        Solicitar serviço
+
+    </button>
+
+</div>
+
+
+                <!-- IMPRESSORAS -->
+
+                <div class="card animar atraso-2">
+
+    <h3>
+        🖨️ Impressoras
+    </h3>
+
+    <p>
+        Manutenção e configuração de impressoras.
+    </p>
+
+
+    <ul class="lista-servicos">
+
+        <li>Limpeza</li>
+
+        <li>Configuração</li>
+
+        <li>Instalação</li>
+
+        <li>Manutenção preventiva</li>
+
+    </ul>
+
+
+    <button onclick="selecionarServico('Manutenção de Impressora')">
+
+        Solicitar serviço
+
+    </button>
+
+</div>
+
+
+                <!-- TECNOLOGIA -->
+
+               <div class="card animar atraso-3">
+
+    <h3>
+        ⚙️ Tecnologia
+    </h3>
+
+    <p>
+        Soluções tecnológicas para empresas.
+    </p>
+
+
+    <ul class="lista-servicos">
+
+        <li>Automação comercial</li>
+
+        <li>Configuração de sistemas</li>
+
+        <li>Suporte técnico</li>
+
+        <li>Configuração de rede</li>
+
+    </ul>
+
+
+    <button onclick="selecionarServico('Outro')">
+
+        Solicitar serviço
+
+    </button>
+
+</div>
+
+
+        </section>
+
+
+        <!-- =========================
+             FORMULÁRIO DE ORÇAMENTO
+        ========================== -->
+
+        <section id="contato">
+
+
+            <h2>
+
+                Solicite seu Orçamento
+
+            </h2>
+
+
+            <p>
+
+                Preencha as informações abaixo
+                e entraremos em contato.
+
+            </p>
+
+
+            <form id="formularioOrcamento">
+
+
+                <!-- NOME -->
+
+                <label for="nome">
+
+                    Seu nome:
+
+                </label>
+
+
+                <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    placeholder="Digite seu nome"
+                    required
+                >
+
+
+                <!-- TELEFONE -->
+
+                <label for="telefone">
+
+                    Seu telefone:
+
+                </label>
+
+
+                <input
+                    type="tel"
+                    id="telefone"
+                    name="telefone"
+                    placeholder="(00) 00000-0000"
+                    required
+                >
+
+
+                <!-- SERVIÇO -->
+
+                <label for="servico">
+
+                    Qual serviço você precisa?
+
+                </label>
+
+
+                <select
+                    id="servico"
+                    name="servico"
+                    required
+                >
+
+                    <option value="">
+
+                        Selecione um serviço
+
+                    </option>
+
+                    <option>
+
+                        Manutenção de Computador
+
+                    </option>
+
+                    <option>
+
+                        Manutenção de Notebook
+
+                    </option>
+
+                    <option>
+
+                        Manutenção de Impressora
+
+                    </option>
+
+                    <option>
+
+                        Formatação
+
+                    </option>
+
+                    <option>
+
+                        Outro
+
+                    </option>
+
+                </select>
+
+
+                <!-- DESCRIÇÃO -->
+
+                <label for="problema">
+
+                    Descreva o que está acontecendo:
+
+                </label>
+
+
+                <textarea
+                    id="problema"
+                    name="problema"
+                    placeholder="Descreva o problema..."
+                    required
+                ></textarea>
+
+
+                <!-- BOTÃO -->
+
+                <button type="submit">
+
+                    Enviar Orçamento
+
+                </button>
+
+
+            </form>
+
+
+            <!-- RESULTADO -->
+
+            <div id="resultadoFormulario"></div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================
+         RODAPÉ
+    ========================== -->
+
+    <footer>
+
+        <p>
+
+            © 2026 - River Tech
+
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+<!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+
+<a
+    href="https://wa.me/5582981833162"
+    class="whatsapp-flutuante"
+    target="_blank"
+    aria-label="Falar com a River Tech pelo WhatsApp"
+>
+    💬
+</a>
+</body>
+
+>>>>>>> 02b587fed9b4ed5519be655916bd6c7b489fc6b8
 </html>
