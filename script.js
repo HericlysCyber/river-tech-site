@@ -155,16 +155,25 @@ formulario.addEventListener(
 
 
         const mensagem =
-`📩 *NOVA SOLICITAÇÃO - RIVER TECH*
+`🚀 *NOVA SOLICITAÇÃO DE ORÇAMENTO*
 
-👤 *Nome:* ${nome}
+━━━━━━━━━━━━━━━━
+
+🏢 *RIVER TECH*
+
+👤 *Cliente:* ${nome}
 
 📱 *Telefone:* ${telefone}
 
-🔧 *Serviço:* ${servico}
+🔧 *Serviço solicitado:*
+${servico}
 
-📝 *Descrição:*
-${problema}`;
+📝 *Descrição do problema:*
+${problema}
+
+━━━━━━━━━━━━━━━━
+
+📅 Solicitação enviada pelo site da River Tech.`;
 
 
         const linkWhatsApp =
